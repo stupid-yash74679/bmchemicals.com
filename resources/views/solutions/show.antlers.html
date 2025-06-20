@@ -1,0 +1,85 @@
+<!-- Breadcrumb Area Start -->
+    <div class="breadcrumb__area" style="background-image: url('assets/img/pages/breadcrumb.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="breadcrumb__area-content">
+						<h2>Solutions Details</h2>
+						<ul>
+							<li><a href="{{ url:home }}">Home</a><i>/</i></li>
+							<li>Solutions Details</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Breadcrumb Area End -->
+    <!-- Solutions Details Area Start -->
+    <div class="services__details section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 columns_sticky">
+                    <div class="all__sidebar">
+                        <div class="all__sidebar-item">
+                            <h5>Our Solutions</h5>
+                            <div class="all__sidebar-item-category">
+                                <ul>
+                                    {{ collection:solutions limit="5" }}
+                                        <li><a href="{{ permalink }}">{{ title }}<i class="flaticon-right-up"></i></a></li>
+                                    {{ /collection:solutions }}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="all__sidebar-item-help mb-25">
+                            <a href="{{ url:home }}"><img src="/assets/img/logo-2.png" alt="Logo"></a>
+                            <span>Quick Help? Call Anytime</span>
+                            <h4><a href="tel:+12142893565">+1 214 289 3565</a></h4>
+                            <a class="default_button" href="{{ url:contact }}">Join In Today<i class="flaticon-right-up"></i></a>
+                        </div>
+                        <div class="all__sidebar-item">
+                            <h5>Download</h5>
+                            <div class="all__sidebar-item-download">
+                                <ul>
+                                    <li><a href="#">Product Brochure<span class="fal fa-arrow-to-bottom"></span></a></li>
+                                    <li><a href="#">Specifications Sheet<span class="fal fa-arrow-to-bottom"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="services__details-area">
+                        <img src="{{ image fallback='/assets/img/services/default.jpg' }}" alt="{{ title }}">
+                        <h4 class="mt-25 mb-20">{{ title }}</h4>
+                        <p class="mb-20">{{ content }}</p>
+
+                        {{ if features }}
+                            <div class="about__one-right-list mb-25">
+                                <ul>
+                                    {{ features }}
+                                        <li><i class="fas fa-chevron-circle-right"></i>{{ value }}</li>
+                                    {{ /features }}
+                                </ul>
+                            </div>
+                        {{ /if }}
+
+                        {{ if description }}
+                            <p class="mb-20">{{ description }}</p>
+                        {{ /if }}
+
+                        {{ if additional_images }}
+                            <div class="row mb-30 mt-30">
+                                {{ additional_images }}
+                                    <div class="col-sm-6 sm-mb-25">
+                                        <img class="img_full" src="{{ url }}" alt="Solution Image">
+                                    </div>
+                                {{ /additional_images }}
+                            </div>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Solutions Details Area End -->

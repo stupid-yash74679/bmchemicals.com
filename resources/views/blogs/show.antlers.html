@@ -1,0 +1,123 @@
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb__area" style="background-image: url('/assets/img/pages/breadcrumb.jpg');">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="breadcrumb__area-content">
+					<h2>{{ title }}</h2>
+					<ul>
+						<li><a href="/">Home</a><i>/</i></li>
+						<li>Blog Details</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Breadcrumb Area End -->
+
+<!-- Blog Details Area Start -->
+<div class="blog__details section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 lg-mb-25">
+				<div class="blog__details-area">
+					<img src="{{ image }}" alt="{{ title }}">
+					<h4 class="mt-25 mb-20">{{ title }}</h4>
+					{{ content }}
+
+					{{ if author or custom_excerpt }}
+					<div class="blog__details-area-box">
+						{{ if custom_excerpt }}<p>{{ custom_excerpt }}</p>{{ /if }}
+						<h6>- {{ author }}</h6>
+						{{ if author_position }}<span>{{ author_position }}</span>{{ /if }}
+					</div>
+					{{ /if }}
+
+					<div class="blog__details-area-tag">
+						<h6>Tags :</h6>
+						<div class="all__sidebar-item-tag">
+							<ul>
+								{{ tags }}<li><a href="/blog/tags/{{ slug }}">{{ title }}</a></li>{{ /tags }}
+							</ul>
+						</div>
+					</div>
+
+					<div class="blog__details-area-contact mt-40">
+						<h4>Post Comment</h4>
+						<p>Your email address will not be published. Required fields are marked</p>
+						<div class="blog__details-area-contact-form">
+							<form action="#">
+								<div class="row">
+									<div class="col-sm-6 mt-25">
+										<div class="blog__details-area-contact-form-item contact-item">
+											<input type="text" name="name" placeholder="Full Name" required="required">
+										</div>
+									</div>
+									<div class="col-sm-6 mt-25">
+										<div class="blog__details-area-contact-form-item contact-item">
+											<input type="text" name="email" placeholder="Email Address" required="required">
+										</div>
+									</div>
+									<div class="col-sm-12 mt-25">
+										<div class="blog__details-area-contact-form-item contact-item">
+											<input type="text" placeholder="Subject" required="required">
+										</div>
+									</div>
+									<div class="col-sm-12 mt-25">
+										<div class="blog__details-area-contact-form-item contact-item">
+											<textarea name="message" placeholder="Type your comments...."></textarea>
+										</div>
+									</div>
+									<div class="col-lg-12 mt-25">
+										<div class="blog__details-area-contact-form-item">
+											<button class="default_button" type="submit">Submit Comment<i class="flaticon-right-up"></i></button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 columns_sticky">
+				<div class="all__sidebar">
+					<div class="all__sidebar-item">
+						<h5>Search Here</h5>
+						<div class="all__sidebar-item-search">
+							<form action="/blog">
+								<input type="text" name="query" placeholder="Search.....">
+								<button type="submit"><i class="fal fa-search"></i></button>
+							</form>
+						</div>
+					</div>
+					<div class="all__sidebar-item">
+						<h5>Recent Blog</h5>
+						<div class="all__sidebar-item-post dark_image">
+							{{ collection:blogs limit="3" sort="date:desc" }}
+							<div class="post__item">
+								<div class="post__item-image">
+									<a href="{{ url }}"><img src="{{ image }}" alt="{{ title }}"></a>
+								</div>
+								<div class="post__item-title">
+									<h6><a href="{{ url }}">{{ title }}</a></h6>
+									<span><i class="far fa-calendar-alt"></i>{{ date format="M d, Y" }}</span>
+								</div>
+							</div>
+							{{ /collection:blogs }}
+						</div>
+					</div>
+					<div class="all__sidebar-item">
+						<h5>Popular Tag</h5>
+						<div class="all__sidebar-item-tag">
+							<ul>
+								{{ tags:all }}<li><a href="/blog/tags/{{ slug }}">{{ title }}</a></li>{{ /tags:all }}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Blog Details Area End -->

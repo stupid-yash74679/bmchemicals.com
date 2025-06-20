@@ -1,58 +1,83 @@
-<footer class="alt_footer bg-black text-white py-12">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-wrap">
-            <div class="w-full lg:w-1/4 mb-5 lg:mb-0">
-                <a href="/" aria-label="Back to Homepage" >
-                    <img src="/images/alt_logo.svg" alt="{{ config:app:name }}" class="w-[100px]">
-<!--                    <img src="{{ glide src='/images/logo.png' format='webp' width='100'}}" alt="{{ config:app:name }}" class="w-[100px]">-->
-                </a>
-            </div>
-
-            <div class="w-full lg:w-1/4">
-                {{ if contact_details:address }}
-                <div class="leading-6 text-base mb-4">{{ contact_details:address }}</div>
-                {{ /if }}
-            </div>
-
-            <div class="w-full lg:w-1/4 flex flex-col">
-                {{ if contact_details:telephone }}
-                <div class="inline-flex font-semibold">
-                    T: <a href="tel:{{ contact_details:telephone }}" class="ml-2 mb-1 font-normal">{{ contact_details:telephone }}</a>
+<!-- Footer Area Start -->
+<div class="footer__three">
+    <div class="bg_shape" style="background-image: url('/assets/img/shape/footer.png');"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer__one-widget social">
+                    <a class="logo" href="/"><img src="{{ brand:logo_light }}" alt="logo"></a>
+                    <p>B&M Chemicals is a Texas-based supplier of EDTA chelates, humic acids, PGRs, and water-soluble fertilizers—helping growers across the U.S. improve yield and soil health.</p>
+                    <ul>
+                        <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="https://behance.net/" target="_blank"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
                 </div>
-                {{ /if }}
-
-                {{ if contact_details:email }}
-                <div class="inline-flex font-semibold">
-                    E: <a href="mailto:{{ contact_details:email }}" class="ml-2 mb-6 font-normal">{{ contact_details:email }}</a>
-                </div>
-                {{ /if }}
-                {{ partial src="_parts/social-links" }}
             </div>
-
-            <div class="w-full lg:w-1/4 order-first lg:order-last mb-5 lg:mb-0">
-                <div class="footer-links flex flex-col space-y-4">
-                    {{ nav:footer_nav }}
-                    <div class="">
-                        <a href="{{ url }}">{{ title }}</a>
+            <div class="col-lg-3 col-sm-6 sm-mt-30">
+                <div class="footer__one-widget ml-35 lg-ml-0">
+                    <h5>Quick links</h5>
+                    <div class="footer-widget-menu">
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="testimonial.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
                     </div>
-                    {{ /nav:footer_nav }}
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 lg-mt-30">
+                <div class="footer__one-widget contact">
+                    <h5>Contact Info</h5>
+                    <div class="contact-item mb-25">
+                        <div class="contact-item-info">
+                            <span>Address</span>
+                            <h6><a href="https://www.google.com/maps?q=3980+N+Collins+Street,+Arlington,+TX+76005" target="_blank">3980 N Collins Street, Arlington, TX 76005</a></h6>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-info">
+                            <span>Email</span>
+                            <h6><a href="mailto:sales@bmchemicals.com">sales@bmchemicals.com</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 lg-mt-30">
+                <div class="footer__one-widget subscribe">
+                    <h5>Subscribe Today</h5>
+                    <p>Get fertilizer insights, product updates, and expert agronomy tips delivered monthly.</p>
+                    <form>
+                        <input type="email" name="email" placeholder="Email address">
+                        <button class="build_button" type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <div class="bottom border-t border-white pt-6 mt-6 text-white flex flex-wrap justify-between items-center">
-            <div class="footer-small-links flex space-x-5">
-            {{ nav:footer_small_links }}
-            <div class="text-xs">
-                <a href="{{ url }}">{{ title }}</a>
-            </div>
-            {{ /nav:footer_small_links }}
-            </div>
-            <div class="flex items-center text-xs leading-5">
-                Site by <a href="https://www.alt-design.net/" target="_blank" class="pl-1 hover:underline">Alt</a>
-                <div class="ml-4">
-                    &copy; {{ now|format:Y }} {{ config:app:name }}</div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="copyright__area">
+                    <div class="row al-center">
+                        <div class="col-md-7">
+                            <div class="copyright__area-content md-t-center md-mb-10">
+                                <p>Copyright 2025 – All Rights Reserved By B&M Chemicals</p>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="footer-widget-menu">
+                                <ul class="jc-end md-jc-center">
+                                    <li><a href="terms.html">Terms & Conditions</a></li>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+</div>
+<!-- Footer Area End -->

@@ -1,7 +1,67 @@
 <?php
 
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
+use Statamic\Facades\Entry;
+use Illuminate\Http\Request;
 
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
+Route::get('/csrf-token', function () {
+    return response()
+        ->json(['token' => csrf_token()])
+        ->withCookie(cookie('XSRF-TOKEN', csrf_token(), 60, '/', null, false, false));
+});
+
+Route::middleware(['web', VerifyCsrfToken::class])->post('/add-product', function (Request $request) {    $csrfTokenFromHeader = $request->header('X-XSRF-TOKEN');
+
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'slug' => 'required|string|max:255',
+        'content' => 'nullable|string',
+        'alt_seo_nofollow' => 'boolean',
+        'alt_seo_noindex' => 'boolean',
+        'author' => 'required|string',
+        'updated_by' => 'required|string',
+        'exclude_from_sitemap' => 'boolean',
+        'protect' => 'string|in:none,password,login',
+        'page_code.code' => 'required|string',
+        'page_code.mode' => 'required|string'
+    ]);
+
+    try {
+        $entry = Entry::make()
+            ->collection('products');
+
+        if (!$entry->collection()) {
+            return response()->json(['error' => 'Collection not found.'], 500);
+        }
+
+        $entry->slug($request->slug)
+            ->data([
+                'title' => $request->title,
+                'alt_seo_nofollow' => $request->alt_seo_nofollow ?? false,
+                'alt_seo_noindex' => $request->alt_seo_noindex ?? false,
+                'author' => $request->author,
+                'updated_by' => $request->updated_by,
+                'exclude_from_sitemap' => $request->exclude_from_sitemap ?? false,
+                'protect' => $request->protect ?? 'none',
+                'content' => $request->content ?? '',
+                'page_code' => [
+                    'code' => $request->input('page_code.code'),
+                    'mode' => $request->input('page_code.mode')
+                ]
+            ])
+            ->published(true);
+
+        $entry->save();
+
+        return response()->json([
+            'message' => 'Product created successfully',
+            'url' => $entry->absoluteUrl(),
+        ], 201);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Server error.'], 500);
+    }
+});

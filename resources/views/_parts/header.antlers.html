@@ -1,68 +1,104 @@
-<nav class="alt_header fixed top-0 left-0 w-screen bg-black text-white z-50">
-    <div class="container mx-auto px-6 py-7 flex justify-between items-center">
-        <a href="/" aria-label="Back to Homepage">
-            <img src="/images/alt_logo.svg" alt="{{ config:app:name }}" class="w-[100px]">
-            <!--                    <img src="{{ glide src='/images/logo.png' format='webp' width='100'}}" alt="{{ config:app:name }}" class="w-[100px]">-->
-        </a>
-        <ul class="links hidden lg:flex">
-            {{ nav:main_nav }}
-                {{ if children }}
-                <li class="relative group">
-                    <a href="{{ url }}" aria-label="{{ title }}" class="whitespace-nowrap px-10 py-7 hover:underline">{{ title }}</a>
-                    <ul class="absolute top-[100%] right-0 bg-black py-5 space-y-5 shadow-md mt-5 hidden group-hover:flex flex-col">
-                        {{ *recursive children* }}
-                    </ul>
-                </li>
-                {{ else }}
-                <li class="">
-                    <a href="{{ url }}" aria-label="{{ title }}" class="whitespace-nowrap px-10 py-7 hover:underline">{{ title }}</a>
-                </li>
-                {{ /if }}
-            {{ /nav:main_nav }}
-        </ul>
-        <div class="mob-nav flex lg:hidden items-center" x-on:click="navOpen = ! navOpen">
-            <div class="hamburger hamburger--spin" style="z-index: 9999999;" x-bind:class="navOpen ? 'is-active' : ''">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
+<!-- Header Area Start -->
+<div class="header__area three">
+    <div class="top__bar-three">
+        <div class="custom_container">
+            <div class="row al-center">
+                <div class="col-md-8">
+                    <div class="top__bar-left md-t-center">
+                        <ul>
+                            <li><a href="https://www.google.com/maps?q=3980+N+Collins+Street,+Arlington,+TX+76005" target="_blank"><i class="fas fa-map-marker-alt"></i>3980 N Collins Street, Arlington, TX 76005</a></li>
+                            <li><a href="mailto:sales@bmchemicals.com"><i class="fas fa-envelope"></i>sales@bmchemicals.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="top__bar-right t-right md-t-center">
+                        <ul>
+                            <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://behance.net/" target="_blank"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-</nav>
+    <div class="custom_container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="header__area-menubar">
+                    <div class="header__area-menubar-left">
+                        <div class="header__area-menubar-left-logo">
+                            <a href="/"><img src="{{ brand:logo_light }}" alt="logo" width="120px"></a>
+                        </div>
+                    </div>
+                    <div class="header__area-menubar-center">
+                        <div class="header__area-menubar-center-menu">
+                            <ul id="mobilemenu">
+                                <li><a href="/">Home</a></li>
 
-<div class="mobile-menu fixed top-0 right-0 left-0 bg-black text-white z-40 transition-all duration-500" x-bind:class="navOpen ? 'bottom-0 preventScroll' : 'bottom-[100%]'" x-cloak>
-    <div class="overflow-y-scroll w-screen h-full max-h-screen">
-        <div class="spacer"></div>
-        <ul class="links space-y-7 px-6 pb-10">
-        {{ nav:main_nav }}
-            {{ if children }}
-            <li class="" x-data="{subnav: false}">
-                <div class="flex justify-between" x-on:click="subnav = ! subnav">
-                    {{ title }}
-                    <svg class="transition" x-bind:class="subnav ? 'rotate-180' : ''"
-                        xmlns="http://www.w3.org/2000/svg" width="20" height="10.909" viewBox="0 0 20 10.909">
-                        <path id="Down_Arrow_3_" d="M30,50.909a.906.906,0,0,1-.643-.266l-9.091-9.091a.909.909,0,0,1,1.285-1.285L30,48.714l8.448-8.448a.909.909,0,0,1,1.285,1.285l-9.091,9.091A.906.906,0,0,1,30,50.909Z" transform="translate(-20 -40)" fill="#FFF"/>
-                    </svg>
+                                <li class="menu-item-has-children"><a href="/products">Products</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/products/edta-chelates">EDTA Chelates & Salts</a></li>
+                                        <li><a href="/products/humic-acids">Humic & Fulvic Acids</a></li>
+                                        <li><a href="/products/micronutrients">Micronutrients & Metal Salts</a></li>
+                                        <li><a href="/products/pgrs">Plant Growth Regulators (PGRs)</a></li>
+                                        <li><a href="/products/ws-fertilizers">Water Soluble Fertilizers</a></li>
+                                        <li><a href="/products/nutraceuticals">Nutraceutical / Food-Grade</a></li>
+                                    </ul>
+                                </li>
 
-                </div>
-                <div class="mob-subnav" x-bind:class="subnav ? 'h-full max-h-[400px] visible' : 'h-0 invisible'">
-                    <div class="px-3 flex flex-col">
-                    {{ children }}
-                        <a href="{{ url }}" aria-label="{{ title }}" class= pt-5 x-on:click="navOpen = ! navOpen">{{ title }}</a>
-                    {{ /children }}
+                                <li class="menu-item-has-children"><a href="/solutions">Solutions by Crop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/solutions/corn">Corn</a></li>
+                                        <li><a href="/solutions/cotton">Cotton</a></li>
+                                        <li><a href="/solutions/forage">Cattle / Forage</a></li>
+                                        <li><a href="/solutions/greenhouse">Greenhouse / Nursery</a></li>
+                                        <li><a href="/solutions/vegetables">Fruits & Vegetables</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item-has-children"><a href="#">Resources</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/blogs">Blogs</a></li>
+                                        <li><a href="/faqs">FAQ</a></li>
+                                        <li><a href="/downloads">Downloads & Guides</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item-has-children"><a href="#">Company</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="/about-us">About Us</a></li>
+                                        <li><a href="/team">Our Team</a></li>
+                                        <li><a href="/testimonials">Customer Testimonials</a></li>
+                                        <li><a href="/contact-us">Contact</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="/request-quote">Request Quote</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__area-menubar-right">
+                        <div class="header__area-menubar-right-search">
+                            <div class="search">
+                                <span class="header__area-menubar-right-search-icon open"><i class="flaticon-search-1"></i></span>
+                            </div>
+                        </div>
+                        <a class="default_button xl-display-n ml-30" href="/request-quote">Get a Quote <i class="flaticon-right-up"></i></a>
+                        <div class="header__area-menubar-right-sidebar">
+                            <div class="header__area-menubar-right-sidebar-icon">
+                                <i class="flaticon-menu-6"></i>
+                            </div>
+                        </div>
+                        <div class="header__area-menubar-right-responsive-menu menu__bar">
+                            <i class="flaticon-menu-3"></i>
+                        </div>
                     </div>
                 </div>
-            </li>
-            {{ else }}
-            <li>
-                <a href="{{ url }}" aria-label="{{ title }}">{{ title }}</a>
-            </li>
-            {{ /if }}
-        {{ /nav:main_nav }}
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="spacer"></div>
-
+<!-- Header Area End -->

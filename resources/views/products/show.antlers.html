@@ -1,0 +1,53 @@
+<!-- Breadcrumb Area Start -->
+    <div class="breadcrumb__area" style="background-image: url('/assets/img/pages/breadcrumb.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="breadcrumb__area-content">
+						<h2>{{ title }}</h2>
+						<ul>
+							<li><a href="{{ url:home }}">Home</a><i>/</i></li>
+							<li><a href="{{ url:products }}">Products</a><i>/</i></li>
+							<li>{{ title }}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Breadcrumb Area End -->
+    <!-- Services Details Area Start -->
+    <div class="services__details section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 columns_sticky">
+                    <div class="all__sidebar">
+                        <div class="all__sidebar-item">
+                            <h5>Other Products</h5>
+                            <div class="all__sidebar-item-category">
+                                <ul>
+                                    {{ collection:products sort="random" limit="9" }}
+                                        <li><a href="{{ permalink }}">{{ title }}<i class="flaticon-right-up"></i></a></li>
+                                    {{ /collection:products }}
+                                    <li><a href="/products">View All Products<i class="flaticon-right-up"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="all__sidebar-item-help mb-25">
+                            <a href="{{ url:home }}"><img src="{{ brand:logo_light }}" alt="Logo"></a>
+                            <span>Quick Help? Call Anytime</span>
+                            <h4><a href="tel:+12142893565">+1 214 289 3565</a></h4>
+                            <a class="default_button" href="{{ url:contact }}">Join In Today<i class="flaticon-right-up"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="services__details-area">
+                        <img src="{{ image }}" alt="{{ title }}">
+                        {{ page_code }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Details Area End -->

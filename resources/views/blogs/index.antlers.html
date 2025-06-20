@@ -1,0 +1,70 @@
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb__area" style="background-image: url('assets/img/pages/breadcrumb.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="breadcrumb__area-content">
+                    <h2>Blog</h2>
+                    <ul>
+                        <li><a href="{{ url:home }}">Home</a><i>/</i></li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Area End -->
+
+<!-- Blog Grid Area Start -->
+<div class="blog__grid section-padding-three">
+    <div class="container">
+        <div class="row">
+            {{ collection:blogs paginate="true" limit="6" }}
+                {{ entries }}
+                    <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp">
+                        <div class="blog__one-item">
+                            <div class="blog__one-item-image">
+                                <a href="{{ permalink }}">
+                                    <img src="https://placehold.co/600x400" alt="{{ title }}">
+                                </a>
+                                <div class="date">
+                                    <h6>{{ date format="d" }}</h6>
+                                    <span>{{ date format="M" }}</span>
+                                </div>
+                            </div>
+                            <div class="blog__one-item-content">
+                                <h5><a href="{{ permalink }}">{{ title }}</a></h5>
+                                <a class="more_btn" href="{{ permalink }}">
+                                    Read More<i class="flaticon flaticon-right-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {{ /entries }}
+            {{ /collection:blogs }}
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-50">
+            <div class="col-xl-12">
+                {{ paginate }}
+                <div class="theme__pagination t-center">
+                    <ul>
+                        {{ if prev_page }}
+                            <li><a href="{{ prev_page }}"><i class="fa-regular fa-angle-left"></i></a></li>
+                        {{ /if }}
+                        {{ page_links }}
+                            <li><a class="{{ if is_current }}active{{ /if }}" href="{{ url }}">{{ page }}</a></li>
+                        {{ /page_links }}
+                        {{ if next_page }}
+                            <li><a href="{{ next_page }}"><i class="fa-regular fa-angle-right"></i></a></li>
+                        {{ /if }}
+                    </ul>
+                </div>
+                {{ /paginate }}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Grid Area End -->
