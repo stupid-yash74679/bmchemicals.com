@@ -14,7 +14,8 @@ Route::get('/csrf-token', function () {
         ->withCookie(cookie('XSRF-TOKEN', csrf_token(), 60, '/', null, false, false));
 });
 
-Route::middleware(['web', VerifyCsrfToken::class])->post('/add-product', function (Request $request) {    $csrfTokenFromHeader = $request->header('X-XSRF-TOKEN');
+Route::middleware(['web', VerifyCsrfToken::class])->post('/add-product', function (Request $request) {
+    $csrfTokenFromHeader = $request->header('X-XSRF-TOKEN');
 
     $request->validate([
         'title' => 'required|string|max:255',
@@ -22,6 +23,10 @@ Route::middleware(['web', VerifyCsrfToken::class])->post('/add-product', functio
         'content' => 'nullable|string',
         'alt_seo_nofollow' => 'boolean',
         'alt_seo_noindex' => 'boolean',
+        'alt_seo_meta_description' => 'nullable|string',
+        'alt_seo_meta_title' => 'nullable|string',
+        'alt_seo_social_description' => 'nullable|string',
+        'alt_seo_social_title' => 'nullable|string',
         'author' => 'required|string',
         'updated_by' => 'required|string',
         'exclude_from_sitemap' => 'boolean',
@@ -43,6 +48,10 @@ Route::middleware(['web', VerifyCsrfToken::class])->post('/add-product', functio
                 'title' => $request->title,
                 'alt_seo_nofollow' => $request->alt_seo_nofollow ?? false,
                 'alt_seo_noindex' => $request->alt_seo_noindex ?? false,
+                'alt_seo_meta_description' => $request->input('alt_seo_meta_description'),
+                'alt_seo_meta_title' => $request->input('alt_seo_meta_title'),
+                'alt_seo_social_description' => $request->input('alt_seo_social_description'),
+                'alt_seo_social_title' => $request->input('alt_seo_social_title'),
                 'author' => $request->author,
                 'updated_by' => $request->updated_by,
                 'exclude_from_sitemap' => $request->exclude_from_sitemap ?? false,

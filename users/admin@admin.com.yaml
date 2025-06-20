@@ -6,3 +6,6 @@ preferences:
   taxonomies:
     categories:
       after_save: create_another
+  collections:
+    products:
+      per_page: 500
