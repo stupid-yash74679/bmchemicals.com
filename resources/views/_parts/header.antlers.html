@@ -6,18 +6,24 @@
                 <div class="col-md-8">
                     <div class="top__bar-left md-t-center">
                         <ul>
-                            <li><a href="https://www.google.com/maps?q=3980+N+Collins+Street,+Arlington,+TX+76005" target="_blank"><i class="fas fa-map-marker-alt"></i>3980 N Collins Street, Arlington, TX 76005</a></li>
-                            <li><a href="mailto:sales@bmchemicals.com"><i class="fas fa-envelope"></i>sales@bmchemicals.com</a></li>
+                            <li><a href="https://www.google.com/maps?q=3980+N+Collins+Street,+Arlington,+TX+76005"
+                                    target="_blank"><i class="fas fa-map-marker-alt"></i>3980 N Collins Street,
+                                    Arlington, TX 76005</a></li>
+                            <li><a href="mailto:sales@bmchemicals.com"><i
+                                        class="fas fa-envelope"></i>sales@bmchemicals.com</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="top__bar-right t-right md-t-center">
                         <ul>
-                            <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="https://twitter.com/" target="_blank"><i
+                                        class="fa-brands fa-x-twitter"></i></a></li>
                             <li><a href="https://behance.net/" target="_blank"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -40,12 +46,9 @@
 
                                 <li class="menu-item-has-children"><a href="/products">Products</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/products/edta-chelates">EDTA Chelates & Salts</a></li>
-                                        <li><a href="/products/humic-acids">Humic & Fulvic Acids</a></li>
-                                        <li><a href="/products/micronutrients">Micronutrients & Metal Salts</a></li>
-                                        <li><a href="/products/pgrs">Plant Growth Regulators (PGRs)</a></li>
-                                        <li><a href="/products/ws-fertilizers">Water Soluble Fertilizers</a></li>
-                                        <li><a href="/products/nutraceuticals">Nutraceutical / Food-Grade</a></li>
+                                        {{ taxonomy:categories }}
+                                        <li><a href="{{ url }}">{{ title }}</a></li>
+                                        {{ /taxonomy:categories }}
                                     </ul>
                                 </li>
 
@@ -83,10 +86,12 @@
                     <div class="header__area-menubar-right">
                         <div class="header__area-menubar-right-search">
                             <div class="search">
-                                <span class="header__area-menubar-right-search-icon open"><i class="flaticon-search-1"></i></span>
+                                <span class="header__area-menubar-right-search-icon open"><i
+                                        class="flaticon-search-1"></i></span>
                             </div>
                         </div>
-                        <a class="default_button xl-display-n ml-30" href="/request-quote">Get a Quote <i class="flaticon-right-up"></i></a>
+                        <a class="default_button xl-display-n ml-30" href="/request-quote">Get a Quote <i
+                                class="flaticon-right-up"></i></a>
                         <div class="header__area-menubar-right-sidebar">
                             <div class="header__area-menubar-right-sidebar-icon">
                                 <i class="flaticon-menu-6"></i>
