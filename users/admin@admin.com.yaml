@@ -9,3 +9,5 @@ preferences:
   collections:
     products:
       per_page: 500
+    blogs:
+      per_page: 500
