@@ -13,7 +13,7 @@
                                 <h1 data-animation="fadeInUp" data-delay=".8s">Chelated Micronutrients & Biostimulants
                                     for Smarter Farming</h1>
                                 <div class="banner__three-content-button" data-animation="fadeInUp" data-delay="1.2s">
-                                    <a class="default_button" href="about.html">Explore Our Products<i
+                                    <a class="default_button" href="/products">Explore Our Products<i
                                             class="flaticon-right-up"></i></a>
                                     <div class="banner__three-content-button-tel">
                                         <div class="banner__three-content-button-tel-icon">
@@ -41,7 +41,7 @@
                                 <h1 data-animation="fadeInUp" data-delay=".8s">Your Partner in Crop Nutrition & Soil
                                     Health</h1>
                                 <div class="banner__three-content-button" data-animation="fadeInUp" data-delay="1.2s">
-                                    <a class="default_button" href="request-quote.html">Request a Quote<i
+                                    <a class="default_button" href="/request-quote">Request a Quote<i
                                             class="flaticon-right-up"></i></a>
                                     <div class="banner__three-content-button-tel">
                                         <div class="banner__three-content-button-tel-icon">
@@ -113,13 +113,13 @@
                             <div class="col-sm-6 sm-mt-25">
                                 <div class="about__three-right-list-item">
                                     <i class="flaticon-data"></i>
-                                    <h5>Tailored Advice & Agronomy Support</h5>
+                                    <h5>Tailored Advice & Agronomy Support 24x7</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="about__three-right-btn mt-50 item_bounce">
-                        <a class="default_button" href="about.html">Learn More About Us<i
+                        <a class="default_button" href="/about-us">Learn More About Us<i
                                 class="flaticon-right-up"></i></a>
                         <img class="sm-display-n" src="assets/img/pages/users.png" alt="image">
                     </div>
@@ -340,7 +340,7 @@
                             <div class="col-md-6 mt-25 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="chooses__two-right-list-item">
                                     <i class="flaticon-idea-1"></i>
-                                    <h5>Purity You Can Trust</h5>
+                                    <h5>Purity You Can Trust 100%</h5>
                                     <p>Zero fillers. Lab-tested batches. Consistency in every bag.</p>
                                 </div>
                             </div>
@@ -401,3 +401,4 @@
     </div>
 </div>
 <!-- Blog Area End -->
+{{ partial src="_parts/footer-cta" }}
