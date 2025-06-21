@@ -141,57 +141,27 @@
             </div>
             <div class="col-lg-5 t-right lg-t-center">
                 <div class="item_bounce mb-10">
-                    <a class="default_button" href="products.html">View All Products<i
+                    <a class="default_button" href="/products">View All Products<i
                             class="flaticon-right-up"></i></a>
                 </div>
             </div>
         </div>
         <div class="row">
+            {{ collection:products limit="6" }}
             <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp" data-wow-delay=".4s">
                 <div class="services__three-item">
                     <div class="services__three-item-image">
-                        <img src="assets/img/services/services-1.jpg" alt="EDTA Chelates">
+                        <img src="{{ image }}" alt="EDTA Chelates">
                     </div>
                     <div class="services__three-item-content">
-                        <span>01</span>
-                        <i class="flaticon-plant"></i>
-                        <h5><a href="edta-chelates.html">EDTA Chelated Micronutrients</a></h5>
-                        <p>High-purity, water-soluble chelates (Fe, Zn, Mn, Cu) designed for optimal plant uptake in
-                            alkaline soils.</p>
-                        <a class="more_btn" href="edta-chelates.html">Explore More<i class="flaticon-right-up"></i></a>
+                        <span>{{ index + 1 }}</span>
+                        <h5><a href="{{ url }}">{{ title }}</a></h5>
+                        <p>{{ content }}</p>
+                        <a class="more_btn" href="{{ url }}">Explore More<i class="flaticon-right-up"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp" data-wow-delay=".7s">
-                <div class="services__three-item">
-                    <div class="services__three-item-image">
-                        <img src="assets/img/services/services-2.jpg" alt="Humic Acids">
-                    </div>
-                    <div class="services__three-item-content">
-                        <span>02</span>
-                        <i class="flaticon-compost"></i>
-                        <h5><a href="humic-acids.html">Humic & Fulvic Acids</a></h5>
-                        <p>Organic soil enhancers that boost microbial activity, water retention, and nutrient
-                            availability.</p>
-                        <a class="more_btn" href="humic-acids.html">Explore More<i class="flaticon-right-up"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp" data-wow-delay="1s">
-                <div class="services__three-item">
-                    <div class="services__three-item-image">
-                        <img src="assets/img/services/services-4.jpg" alt="Water Soluble Fertilizers">
-                    </div>
-                    <div class="services__three-item-content">
-                        <span>03</span>
-                        <i class="flaticon-fertilizer"></i>
-                        <h5><a href="ws-fertilizers.html">Water-Soluble Fertilizers</a></h5>
-                        <p>Fast-acting, balanced NPK blends with trace elements for fertigation and foliar applications.
-                        </p>
-                        <a class="more_btn" href="ws-fertilizers.html">Explore More<i class="flaticon-right-up"></i></a>
-                    </div>
-                </div>
-            </div>
+            {{ /collection:products  }}
         </div>
     </div>
 </div>
