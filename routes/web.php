@@ -135,3 +135,46 @@ Route::middleware(['web', VerifyCsrfToken::class])->post('/add-blog', function (
         return response()->json(['error' => 'Server error.'], 500);
     }
 });
+
+Route::middleware(['web'])->get('/get-blogs', function () {
+    $blogs = \Statamic\Facades\Entry::query()
+        ->where('collection', 'blogs')
+        ->get()
+        ->map(function ($entry) {
+            return [
+                'id' => $entry->id(),
+                'title' => $entry->get('title'),
+                'content' => $entry->get('content'),
+                'slug' => $entry->slug(),
+                'url' => $entry->absoluteUrl(),
+                'image_url' => $entry->get('image_url'),
+                'thumbnail_image_url' => $entry->get('thumbnail_image_url'),
+            ];
+        });
+
+    return response()->json($blogs);
+});
+
+Route::middleware(['web', VerifyCsrfToken::class])->post('/update-blog-image', function (Request $request) {
+    $request->validate([
+        'id' => 'required|string',
+        'image_url' => 'nullable|url',
+        'thumbnail_image_url' => 'nullable|url'
+    ]);
+
+    try {
+        $entry = \Statamic\Facades\Entry::find($request->id);
+
+        if (!$entry) {
+            return response()->json(['error' => 'Entry not found'], 404);
+        }
+
+        $entry->set('image_url', $request->image_url);
+        $entry->set('thumbnail_image_url', $request->thumbnail_image_url);
+        $entry->save();
+
+        return response()->json(['message' => 'Blog image updated successfully']);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Server error.'], 500);
+    }
+});

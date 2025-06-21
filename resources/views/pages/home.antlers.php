@@ -74,13 +74,14 @@
                 <div class="about__three-left mr-30 xl-mr-0 lg-mb-25">
                     <div class="row">
                         <div class="col-6">
-                            <img class="wow one img_top_animation" src="/storage/homepage/aboutus/fertilizer-distributor-texas.webp" alt="image">
-                            <img class="two wow mt-25 img_bottom_animation" src="/storage/homepage/aboutus/humic-acid-supplier-california.webp"
-                                alt="image">
+                            <img class="wow one img_top_animation"
+                                src="/storage/homepage/aboutus/fertilizer-distributor-texas.webp" alt="image">
+                            <img class="two wow mt-25 img_bottom_animation"
+                                src="/storage/homepage/aboutus/humic-acid-supplier-california.webp" alt="image">
                         </div>
                         <div class="col-6">
-                            <img class="three mb-25 wow img_bottom_animation" src="/storage/homepage/aboutus/warehousing-chemical-mexico.webp"
-                                alt="image">
+                            <img class="three mb-25 wow img_bottom_animation"
+                                src="/storage/homepage/aboutus/warehousing-chemical-mexico.webp" alt="image">
                             <div class="about__three-left-experience bounce_y">
                                 <h3><span class="counter">15</span>+ Years</h3>
                                 <span>of Expertise in Crop Nutrition</span>
@@ -141,13 +142,12 @@
             </div>
             <div class="col-lg-5 t-right lg-t-center">
                 <div class="item_bounce mb-10">
-                    <a class="default_button" href="/products">View All Products<i
-                            class="flaticon-right-up"></i></a>
+                    <a class="default_button" href="/products">View All Products<i class="flaticon-right-up"></i></a>
                 </div>
             </div>
         </div>
         <div class="row">
-            {{ collection:products limit="6" }}
+            {{ collection:products limit="6" sort="date:desc" }}
             <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp" data-wow-delay=".4s">
                 <div class="services__three-item">
                     <div class="services__three-item-image">
@@ -161,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            {{ /collection:products  }}
+            {{ /collection:products }}
         </div>
     </div>
 </div>
@@ -198,7 +198,8 @@
                         <div class="row al-center">
                             <div class="col-lg-6 lg-mb-25">
                                 <div class="features__area-content-item-left mr-50 lg-mr-0">
-                                    <img class="img_full" src="/storage/homepage/whyus/edta-chelates-iowa.webp" alt="image">
+                                    <img class="img_full" src="/storage/homepage/whyus/edta-chelates-iowa.webp"
+                                        alt="image">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -233,7 +234,8 @@
                             </div>
                             <div class="col-lg-6 lg-mt-25">
                                 <div class="features__area-content-item-left ml-50 lg-ml-0">
-                                    <img class="img_full" src="/storage/homepage/whyus/micronutrients-nebraska.webp" alt="image">
+                                    <img class="img_full" src="/storage/homepage/whyus/micronutrients-nebraska.webp"
+                                        alt="image">
                                 </div>
                             </div>
                         </div>
@@ -242,7 +244,8 @@
                         <div class="row al-center">
                             <div class="col-lg-6 lg-mb-25">
                                 <div class="features__area-content-item-left mr-50 lg-mr-0">
-                                    <img class="img_full" src="/storage/homepage/whyus/foliar-feed-indiana.webp" alt="image">
+                                    <img class="img_full" src="/storage/homepage/whyus/foliar-feed-indiana.webp"
+                                        alt="image">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -277,7 +280,8 @@
                             </div>
                             <div class="col-lg-6 lg-mt-25">
                                 <div class="features__area-content-item-left ml-50 lg-ml-0">
-                                    <img class="img_full" src="/storage/homepage/whyus/humic-fulvic-acids-texas.webp" alt="image">
+                                    <img class="img_full" src="/storage/homepage/whyus/humic-fulvic-acids-texas.webp"
+                                        alt="image">
                                 </div>
                             </div>
                         </div>
@@ -309,9 +313,11 @@
         <div class="row al-center">
             <div class="col-lg-6 lg-mb-30">
                 <div class="chooses__two-left mr-30 lg-mr-0">
-                    <img class="one wow img_left_animation" src="/storage/homepage/whyus/edta-chelates-georgia.webp" alt="image">
+                    <img class="one wow img_left_animation" src="/storage/homepage/whyus/edta-chelates-georgia.webp"
+                        alt="image">
                     <div class="t-right">
-                        <img class="two wow img_top_animation" src="/storage/homepage/whyus/micronutrients-alabama.webp" alt="image">
+                        <img class="two wow img_top_animation" src="/storage/homepage/whyus/micronutrients-alabama.webp"
+                            alt="image">
                     </div>
                     <div class="chooses__two-left-project bounce_y">
                         <i class="flaticon-project-1"></i>
@@ -371,7 +377,12 @@
             <div class="col-lg-7">
                 <div class="blog__three-right wow fadeInUp" data-wow-delay=".4s">
                     {{ collection:blogs limit="5" }}
-                    <div class="blog__three-right-item">
+                    <div class="blog__three-right-item mb-30">
+                        <div class="blog__three-right-item-image">
+                            <div class="img"><a href="{{ url }}"><img src="{{ thumbnail_image_url }}"
+                                        alt="{{ title }}"></a>
+                            </div>
+                        </div>
                         <div class="blog__three-right-item-content">
                             <div class="blog__one-item-content-meta">
                                 <ul>
@@ -379,8 +390,7 @@
                                 </ul>
                             </div>
                             <h5><a href="{{ url }}">{{ title }}</a></h5>
-                            <a class="more_btn" href="{{ url }}">Read More<i
-                                    class="flaticon flaticon-right-up"></i></a>
+                            <a class="more_btn" href="{{ url }}">Read More<i class="flaticon flaticon-right-up"></i></a>
                         </div>
                     </div>
                     {{ /collection:blogs }}

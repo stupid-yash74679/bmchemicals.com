@@ -20,13 +20,13 @@
 <div class="blog__grid section-padding-three">
     <div class="container">
         <div class="row">
-            {{ collection:blogs paginate="true" limit="6" }}
+            {{ collection:blogs paginate="true" limit="12" }}
                 {{ entries }}
                     <div class="col-lg-4 col-md-6 mt-25 wow fadeInUp">
                         <div class="blog__one-item">
                             <div class="blog__one-item-image">
                                 <a href="{{ permalink }}">
-                                    <img src="https://placehold.co/600x400" alt="{{ title }}">
+                                    <img src="{{ thumbnail_image_url }}" alt="{{ title }}">
                                 </a>
                                 <div class="date">
                                     <h6>{{ date format="d" }}</h6>
