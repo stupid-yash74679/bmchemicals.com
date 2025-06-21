@@ -400,12 +400,8 @@
             </div>
             <div class="col-lg-7">
                 <div class="blog__three-right wow fadeInUp" data-wow-delay=".4s">
-                    {{ collection:blogs }}
+                    {{ collection:blogs limit="5" }}
                     <div class="blog__three-right-item">
-                        <div class="blog__three-right-item-image">
-                            <div class="img"><a href="{url}"><img src="/assets/img/blog/blog-1.jpg"
-                                        alt="image"></a></div>
-                        </div>
                         <div class="blog__three-right-item-content">
                             <div class="blog__one-item-content-meta">
                                 <ul>
@@ -413,7 +409,7 @@
                                 </ul>
                             </div>
                             <h5><a href="{{ url }}">{{ title }}</a></h5>
-                            <a class="more_btn" href="blog-details.html">Read More<i
+                            <a class="more_btn" href="{{ url }}">Read More<i
                                     class="flaticon flaticon-right-up"></i></a>
                         </div>
                     </div>

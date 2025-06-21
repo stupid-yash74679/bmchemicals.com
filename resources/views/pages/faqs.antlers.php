@@ -1,5 +1,5 @@
 <!-- Breadcrumb Area Start -->
-    <div class="breadcrumb__area" style="background-image: url('/assets/img/pages/breadcrumb.jpg');">
+<div class="breadcrumb__area" style="background-image: url('/storage/general/pgr-blends-mississippi.webp');">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
