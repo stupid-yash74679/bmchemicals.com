@@ -29,23 +29,25 @@
                 <div class="about__one-right ml-40 xl-ml-0">
                     <div class="about__one-right-title">
                         <span class="subtitle wow fadeInLeft" data-wow-delay=".4s">Who We Are</span>
-                        <h2 class="title_split_anim mb-20">B&M Chemicals — Trusted Crop Nutrition Partner</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".4s">B&M Chemicals is a leading supplier of high-purity EDTA chelates, humic acids, micronutrients, and water-soluble fertilizers based in Arlington, Texas. With 15+ years of industry experience, our mission is to empower growers across the U.S. with precision nutrients and science-backed solutions that improve yield, soil health, and profitability.</p>
+                        <h2 class="title_split_anim mb-20">B&M Chemicals — Specialty Chemical Partner Across Industries</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".4s">
+                            B&M Chemicals is a U.S.-based distributor of high-quality specialty and industrial chemicals serving agriculture, pharmaceuticals, coatings, personal care, and beyond. Headquartered in Arlington, Texas, and backed by over 15 years of experience, we deliver performance-focused solutions with uncompromised quality and regulatory assurance.
+                        </p>
                     </div>
                     <div class="about__one-right-list mt-35">
                         <div class="row">
                             <div class="col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                                 <ul>
-                                    <li><i class="flaticon-check-mark"></i>Lab-Tested Purity</li>
-                                    <li><i class="flaticon-check-mark"></i>Crop-Specific Formulas</li>
-                                    <li><i class="flaticon-check-mark"></i>Texas-Based, U.S. Reach</li>
+                                    <li><i class="flaticon-check-mark"></i>Batch-Tested & Compliant</li>
+                                    <li><i class="flaticon-check-mark"></i>Tailored for Industrial & Agri Use</li>
+                                    <li><i class="flaticon-check-mark"></i>Texas-Based Fulfillment</li>
                                 </ul>
                             </div>
                             <div class="col-sm-6 sm-mt-10 wow fadeInUp" data-wow-delay=".9s">
                                 <ul>
-                                    <li><i class="flaticon-check-mark"></i>Agri-Tech Support Team</li>
-                                    <li><i class="flaticon-check-mark"></i>24–48 Hr Dispatch</li>
-                                    <li><i class="flaticon-check-mark"></i>Transparent Sourcing</li>
+                                    <li><i class="flaticon-check-mark"></i>Technical Guidance by Sector</li>
+                                    <li><i class="flaticon-check-mark"></i>48-Hour Dispatch on Most Orders</li>
+                                    <li><i class="flaticon-check-mark"></i>Transparent Global Sourcing</li>
                                 </ul>
                             </div>
                         </div>

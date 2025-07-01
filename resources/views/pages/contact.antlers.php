@@ -23,7 +23,7 @@
 			<div class="col-lg-4 col-md-6 mt-25">
 				<div class="contact__info-item">
 					<i class="flaticon-location"></i>
-					<span>Our Location:</span>
+					<span>Our Headquarters:</span>
 					<h5><a href="https://www.google.com/maps?q=3980+N+Collins+Street,+Arlington,+TX+76005" target="_blank">3980 N Collins Street, Arlington, TX 76005</a></h5>
 				</div>
 			</div>
@@ -39,13 +39,14 @@
 				<div class="contact__info-item">
 					<i class="flaticon-phone-call"></i>
 					<span>Call Us:</span>
-					<h5><a href="tel:+12142893565">+1 214 289 3565</a></h5>
-					<h5><a href="tel:+17323719999">+1 732 371 9999</a></h5>
+					<h5><a href="tel:+12142893565">+1 (214) 289-3565</a></h5>
+					<h5><a href="tel:+17323719999">+1 (732) 371-9999</a></h5>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="contact__area section-padding pt-0">
 	<div class="container">
 		<div class="row al-center">
@@ -72,7 +73,7 @@
 							</div>
 							<div class="col-md-12 mt-25">
 								<div class="contact__form-area-item">
-									<textarea name="message" placeholder="Message"></textarea>
+									<textarea name="message" placeholder="Your message here..."></textarea>
 								</div>
 							</div>
 							<div class="col-md-12 mt-25">

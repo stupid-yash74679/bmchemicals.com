@@ -11,3 +11,6 @@ preferences:
       per_page: 500
     blogs:
       per_page: 500
+  assets:
+    assets:
+      per_page: 500
