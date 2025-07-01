@@ -4,6 +4,8 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Statamic\Facades\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Statamic\Facades\AssetContainer;
 
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
@@ -169,8 +171,28 @@ Route::middleware(['web', VerifyCsrfToken::class])->post('/update-blog-image', f
             return response()->json(['error' => 'Entry not found'], 404);
         }
 
-        $entry->set('image_url', $request->image_url);
-        $entry->set('thumbnail_image_url', $request->thumbnail_image_url);
+        $container = AssetContainer::find('assets');
+
+        if ($request->image_url) {
+            $imageContent = file_get_contents($request->image_url);
+            $imageName = 'image_' . uniqid() . '.' . pathinfo(parse_url($request->image_url, PHP_URL_PATH), PATHINFO_EXTENSION);
+            $path = 'uploads/' . $imageName;
+            $container->disk()->put($path, $imageContent);
+            $asset = $container->makeAsset($path);
+            $asset->save();
+            $entry->set('image_url', $asset->url());
+        }
+
+        if ($request->thumbnail_image_url) {
+            $thumbContent = file_get_contents($request->thumbnail_image_url);
+            $thumbName = 'thumb_' . uniqid() . '.' . pathinfo(parse_url($request->thumbnail_image_url, PHP_URL_PATH), PATHINFO_EXTENSION);
+            $path = 'uploads/' . $thumbName;
+            $container->disk()->put($path, $thumbContent);
+            $asset = $container->makeAsset($path);
+            $asset->save();
+            $entry->set('thumbnail_image_url', $asset->url());
+        }
+
         $entry->save();
 
         return response()->json(['message' => 'Blog image updated successfully']);
